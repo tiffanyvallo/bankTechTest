@@ -28,4 +28,10 @@ describe('#withdraw', () => {
     account.withdraw(800)
     expect(account.balance()).toEqual(200)
   })
+  test('cannot withdraw if amount is greater than balance', () => {
+    account.deposit(1000)
+    expect(() => {
+      account.withdraw(1100)
+    }).toThrow('Insufficient Funds: Cannot withdraw money')
+  })
 })
