@@ -25,4 +25,9 @@ describe('#withdraw', () => {
     account.withdraw(7000)
     expect(account.transactionHistoy).toContain(-7000)
   })
+  test('can withdraw money from account', () => {
+    account.deposit(1000)
+    account.withdraw(800)
+    expect(account.balance()).toEqual(200)
+  })
 })
