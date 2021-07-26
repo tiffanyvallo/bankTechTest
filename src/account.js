@@ -8,6 +8,11 @@ class Account {
     return this.transactionHistoy.push(amount)
   }
 
+  withdraw = (amount) => {
+    let withdrawal = - amount
+    return this.transactionHistoy.push(withdrawal)
+  }
+
   balance = () => {
     return this.transactionHistoy.reduce((a,b) => a + b, 0) 
   }
