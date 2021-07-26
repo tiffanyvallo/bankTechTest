@@ -12,7 +12,7 @@ test('can save transactions into an array of transactions', () => {
   account.deposit(100)
   account.withdraw(80)
   // console.log(account.transactionHistory)
-  expect(account.transactionHistoy).toContain(100,-80)
+  expect(account.transactionHistoy[1].currentBalance).toBe(20)
 })
 
 describe('#deposit', () => {
