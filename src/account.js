@@ -9,7 +9,9 @@ class Account {
   }
 
   withdraw = (amount) => {
-    if (amount > this.balance()) {
+    if (amount < 0) {
+      throw new Error ('Invalid Amount: Cannot withdraw amount less than £0')
+    } else if (amount > this.balance()) {
       throw new Error ('Insufficient Funds: Cannot withdraw money')
     }
     let withdrawal = - amount
