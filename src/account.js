@@ -4,12 +4,12 @@ class Account {
     this.transactionHistoy = []
   }
 
-  balance = () => {
-    return this.transactionHistoy.reduce((a,b) => a + b, 0) 
-  }
-
   deposit = (amount) => {
     return this.transactionHistoy.push(amount)
+  }
+
+  balance = () => {
+    return this.transactionHistoy.reduce((a,b) => a + b, 0) 
   }
 
 }
