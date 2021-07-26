@@ -86,6 +86,10 @@ I would like to be notified if I try to deposit an amount less than £0
 ## How to use
 
 ## How to run tests
+To install Jest run
+```
+yarn add --dev jest
+```
 
 ## Code Dependecies
   - JavaScript
