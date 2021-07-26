@@ -63,4 +63,9 @@ describe('#withdraw', () => {
     account.withdraw(567.50)
     expect(account.balance()).toEqual(21999.50)
   })
+  test('can have an overdraft limit with a default of £100', () => {
+    account.deposit(500)
+    account.withdraw(550)
+    expect(account.balance()).toEqual(-50)
+  })
 })
