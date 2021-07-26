@@ -30,6 +30,10 @@ describe('#deposit', () => {
       account.deposit('MONEY!!')
     }).toThrow('Invalid Data Type: Please enter an integer')
   })
+  test('can deposit floats', () => {
+    account.deposit(10735.80)
+    expect(account.balance()).toEqual(10735.80)
+  })
 })
 
 describe('#withdraw', () => {
@@ -53,5 +57,10 @@ describe('#withdraw', () => {
     expect(() => {
       account.withdraw('MONEY!!')
     }).toThrow('Invalid Data Type: Please enter an integer')
+  })
+  test('can withdraw floats', () => {
+    account.deposit(22567.00)
+    account.withdraw(567.50)
+    expect(account.balance()).toEqual(21999.50)
   })
 })
