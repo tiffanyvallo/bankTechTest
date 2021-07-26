@@ -34,4 +34,9 @@ describe('#withdraw', () => {
       account.withdraw(1100)
     }).toThrow('Insufficient Funds: Cannot withdraw money')
   })
+  test('cannot withdraw an amount less than 0', () => {
+    expect(() => {
+      account.withdraw(-100)
+    }).toThrow('Invalid Amount: Cannot withdraw amount less than £0')
+  })
 })
