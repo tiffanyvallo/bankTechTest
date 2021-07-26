@@ -78,8 +78,8 @@ I want to be able to see my account statement listed in reverse chronology by da
 ### Edge Cases
 ```
 As a client
-So that I am not taking out an overdraft
-I would like to be notified if I withdraw over my balance
+So I do not go into debt
+I want my account to prevent withdrawal if I have insufficient funds
 ```
 ```
 As a client
@@ -90,6 +90,11 @@ I would like to be notified if I try to withdraw an amount less than £0
 As a client
 So that I am depositing the correct amount 
 I would like to be notified if I try to deposit an amount less than £0
+```
+```
+As a client
+So I know I am adding real money
+I want to be notified if I try to enter anything other than an integer or float
 ```
 
 ### Notes: <br>
