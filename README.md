@@ -57,8 +57,23 @@ I would like to be able to see my bank balance
 ```
 ```
 As a client
+So I can have emergency funds
+I would like to have an overdraft limit
+```
+```
+As a client
 So that I can view my account
 I would like to be able to print a dated bank statement of my transactions
+```
+```
+As a client
+So I can keep on top of my finaces
+I want my account statement to display the date, transaction amount, type, and current balance
+```
+```
+As a client
+So I can see an up to date history of my transactions
+I want to be able to see my account statement listed in reverse chronology by date created
 ```
 ### Edge Cases
 ```
