@@ -90,7 +90,14 @@ To install Jest run
 ```
 yarn add --dev jest
 ```
-
+To run test 
+```
+yarn test
+```
+or 
+```
+yarn watch
+```
 ## Code Dependecies
   - JavaScript
   - Jest
