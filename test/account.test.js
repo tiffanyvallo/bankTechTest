@@ -25,6 +25,11 @@ describe('#deposit', () => {
       account.deposit(-100)
     }).toThrow('Invalid Amount: Cannot deposit amount less than £0')
   })
+  test('canot deposit invalid data type', () => {
+    expect(() => {
+      account.deposit('MONEY!!')
+    }).toThrow('Invalid Data Type: Please enter an integer')
+  })
 })
 
 describe('#withdraw', () => {
@@ -43,5 +48,10 @@ describe('#withdraw', () => {
     expect(() => {
       account.withdraw(-100)
     }).toThrow('Invalid Amount: Cannot withdraw amount less than £0')
+  })
+  test('cannot withdraw invalid data type', () => {
+    expect(() => {
+      account.withdraw('MONEY!!')
+    }).toThrow('Invalid Data Type: Please enter an integer')
   })
 })
