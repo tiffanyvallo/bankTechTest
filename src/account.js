@@ -5,6 +5,9 @@ class Account {
   }
 
   deposit = (amount) => {
+    if (amount < 0) {
+      throw new Error ('Invalid Amount: Cannot deposit amount less than £0')
+    }
     return this.transactionHistoy.push(amount)
   }
 
