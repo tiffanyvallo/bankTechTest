@@ -20,6 +20,11 @@ describe('#deposit', () => {
     account.deposit(10000)
     expect(account.balance()).toEqual(10000)
   })
+  test('cannot deposit amount less than £0', () => {
+    expect(() => {
+      account.deposit(-100)
+    }).toThrow('Invalid Amount: Cannot deposit amount less than £0')
+  })
 })
 
 describe('#withdraw', () => {
