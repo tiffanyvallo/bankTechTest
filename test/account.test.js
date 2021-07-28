@@ -1,18 +1,30 @@
 const Account = require('../src/account');
+const Statement = require('../src/statement');
+
 
 beforeEach(function() {
   account = new Account()
 })
 
-test('can create an account with an opening balance of 0', () => {
-  expect(account.openingBalance).toBe(0)
-})
+describe('#account', () => { 
+  test('can create an account with an opening balance of 0', () => {
+    expect(account.openingBalance).toBe(0)
+  })
 
-test('can save transactions into an array of transactions', () => {
-  account.deposit(100)
-  account.withdraw(80)
-  // console.log(account.transactionHistory)
-  expect(account.transactionHistoy[1].currentBalance).toBe(20)
+  test('can save transactions into an array of transactions', () => {
+    account.deposit(100)
+    account.withdraw(80)
+    // console.log(account.transactionHistory)
+    expect(account.transactionHistoy[1].currentBalance).toBe(20)
+  })
+
+  test('can print a statement with the inputted account transaction history', () => {
+    account.deposit(70567.89)
+    account.deposit(478.35)
+    account.withdraw(1573.78)
+    expect(account.viewStatement()).toEqual(`date    ||  credit  ||  debit  || balance\n${new Date().toLocaleDateString()} ||  || 1573.78 || 69472.46\n${new Date().toLocaleDateString()} || 478.35 ||  || 71046.24\n${new Date().toLocaleDateString()} || 70567.89 ||  || 70567.89`)
+  })
+
 })
 
 describe('#deposit', () => {
