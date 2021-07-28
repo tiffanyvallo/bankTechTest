@@ -1,6 +1,4 @@
 const Account = require('../src/account');
-const Statement = require('../src/statement');
-
 
 beforeEach(function() {
   account = new Account()

@@ -1,3 +1,4 @@
+const Statement = require("./statement")
 const Transaction = require("./transaction")
 class Account {
   constructor(openingBalance = 0, overdraftLimit = 100) {
@@ -19,6 +20,13 @@ class Account {
 
   balance = () => {
     return this.transactionHistoy.map(transaction => transaction.amount).reduce((a, b) => a + b, 0)
+  }
+
+  viewStatement = () => {
+    let statment = new Statement
+    let printout = statment.printStatement(this.transactionHistoy)
+    console.log(printout)
+    return printout
   }
 
   _depositChecks = (amount) => {
