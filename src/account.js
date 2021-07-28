@@ -23,10 +23,8 @@ class Account {
   }
 
   viewStatement = () => {
-    let statment = new Statement
-    let printout = statment.printStatement(this.transactionHistoy)
-    console.log(printout)
-    return printout
+    let statement = new Statement
+    return statement.printStatement(this.transactionHistoy)
   }
 
   _depositChecks = (amount) => {

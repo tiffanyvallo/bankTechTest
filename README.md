@@ -1,5 +1,7 @@
 # Bank Tech Test in JavaScript
 
+![bankTechTestDemo](public/images/js-test.gif)
+
 ## Requirements
 You should be able to interact with your code via the JavaScript console.
 Deposits, withdrawal.
@@ -97,13 +99,39 @@ So I know I am adding real money
 I want to be notified if I try to enter anything other than an integer or float
 ```
 
-### Notes: <br>
- withdrawal [- if sufficient_funds?] - add to transaction_history (private method) <br>
- balance (iterates through transaction history) <br>
- @transaction_history = [] 
-<br>
-
 ## How to use
+Clone this repo and move into the project directory.
+Run `yarn install` to ensure all node modules are running.
+To use this app you will need to run node on your command line
+
+```
+$ git clone https://github.com/tiffanyvallo/bankTechTest.git
+$ cd bankTechTest
+$ yarn install
+$ node
+```
+Once node is running, you will need to require the account.js file
+```
+# Node session
+> let connection = require('./src/account')
+```
+You then need to create a new instance of the account class
+```
+> let account = new connection
+```
+You can withdraw and deposit any amount of money using the following commands
+```
+> account.deposit(10000.50)
+> account.withdraw(7500.50)
+```
+To check your balance you can run the following command
+```
+> account.balance()
+```
+To get a printed statement of your transactions
+```
+> console.log(account.viewStatement())
+```
 
 ## How to run tests
 To install Jest run
@@ -114,11 +142,16 @@ To run test
 ```
 yarn test
 ```
-or 
-```
-yarn watch
-```
+
+Test results for this application
+<details>
+<summary>Jest</summary>
+<br>
+<img src="/public/images/jestBank.png">
+</details>
+<br>
+
 ## Code Dependecies
   - JavaScript
   - Jest
-  - REPL
+  - node
